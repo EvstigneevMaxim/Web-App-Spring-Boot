@@ -30,12 +30,13 @@ public class PostsViewController {
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("appName", "Моё супер приложение");
+        model.addAttribute("posts", postsService.listAllPosts());
         return "list";
     }
 
-    @RequestMapping(path = "/posts", method = RequestMethod.GET)
+    /*@RequestMapping(path = "/posts", method = RequestMethod.GET)
     public String listPosts(Model model) {
         model.addAttribute("posts", postsService.listAllPosts());
         return "posts";
-    }
+    }*/
 }

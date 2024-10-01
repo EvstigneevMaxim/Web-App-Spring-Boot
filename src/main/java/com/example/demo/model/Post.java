@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Calendar;
 import java.util.Date;
 
 public class Post {
@@ -29,6 +32,7 @@ public class Post {
     public Post(String text) {
         this.text = text;
         this.likes = 0;
+        this.creationDate = new Date(2000-1900, Calendar.JANUARY, 1);
     }
 
     public Post(String text, Date creationDate) {
