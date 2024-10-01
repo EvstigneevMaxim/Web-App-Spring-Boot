@@ -23,16 +23,15 @@ public class Post {
         return creationDate;
     }
 
+    public Post(String text) {
+        this.text = text;
+        this.likes = 0;
+        this.creationDate = new Date(2000 - 1900, Calendar.JANUARY, 1);
+    }
 
     public Post(String text, Integer likes) {
         this.text = text;
         this.likes = likes;
-    }
-
-    public Post(String text) {
-        this.text = text;
-        this.likes = 0;
-        this.creationDate = new Date(2000-1900, Calendar.JANUARY, 1);
     }
 
     public Post(String text, Date creationDate) {

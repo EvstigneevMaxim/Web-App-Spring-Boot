@@ -11,15 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PostsViewController {
-    /*@ResponseBody
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String list() {
-        return "Здесь будет главная страница";
-    }*/
 
     @Autowired
     PostService postsService;
-
 
     @ResponseBody
     @RequestMapping(path = "/post/{id}", method = RequestMethod.GET)
@@ -33,10 +27,10 @@ public class PostsViewController {
         model.addAttribute("posts", postsService.listAllPosts());
         return "list";
     }
-
-    /*@RequestMapping(path = "/posts", method = RequestMethod.GET)
-    public String listPosts(Model model) {
-        model.addAttribute("posts", postsService.listAllPosts());
-        return "posts";
-    }*/
 }
+
+    /*@ResponseBody
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String list() {
+        return "Здесь будет главная страница";
+    }*/
