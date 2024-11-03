@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
+
+
 @Controller
 public class PostsCreateController {
 
@@ -23,7 +26,10 @@ public class PostsCreateController {
 
     @RequestMapping(path = "/new", method = RequestMethod.POST)
     public String doCreate(@ModelAttribute("text") String text) {
-        postService.addPost(text);
+        List<Post> posts = postService.listAllPosts();
+        Long newPostId = (long) posts.size();
+        Post newPost = new Post(newPostId, text);
+        posts.add(newPost);
         return "redirect:/";
     }
 }
