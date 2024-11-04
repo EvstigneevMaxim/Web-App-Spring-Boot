@@ -1,9 +1,16 @@
 package com.example.demo.model;
 
 import java.time.LocalDate;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import java.io.Serializable;
+import java.util.Date;
 
-
-public class Post {
+@Entity
+public class Post implements Serializable {
+    @Id
+    @GeneratedValue
     private Long id;
     private String text;
     private Integer likes;
@@ -27,6 +34,9 @@ public class Post {
 
     public LocalDate getCreationDate() {
         return creationDate;
+    }
+
+    public Post() {
     }
 
     public Post(String text) {
