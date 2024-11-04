@@ -36,11 +36,13 @@ public class PostService {
     /*public void addPost(String text) {
         posts.add(new Post((long)posts.size(), text, LocalDate.now()));
     }*/
-    public void create(final String text) {
+    public void addPost(final String text) {
         Post post = new Post(null, text, LocalDate.now());
         postRepository.save(post);
     }
-    /*public void addPost(Post post){
-        posts.add(post);
-    }*/
+
+    public void addPost(Post post){
+        //posts.add(post);
+        postRepository.save(post);
+    }
 }
