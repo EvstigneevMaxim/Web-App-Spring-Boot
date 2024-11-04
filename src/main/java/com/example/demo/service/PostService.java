@@ -41,8 +41,8 @@ public class PostService {
         postRepository.save(post);
     }
 
-    public void addPost(Post post){
+    /*public void addPost(Post post){
         //posts.add(post);
         postRepository.save(post);
-    }
+    }*/
 }

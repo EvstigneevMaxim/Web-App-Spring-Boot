@@ -29,7 +29,7 @@ public class PostsCreateController {
         List<Post> posts = postService.listAllPosts();
         Long newPostId = (long) posts.size();
         Post newPost = new Post(newPostId, text);
-        postService.addPost(newPost);
+        postService.addPost(text);
         return "redirect:/";
     }
 }
